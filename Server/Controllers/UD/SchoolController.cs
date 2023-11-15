@@ -6,9 +6,7 @@ using OCTOBER.EF.Models;
 using OCTOBER.Server.Controllers.Base;
 using OCTOBER.Shared.DTO;
 using System.Diagnostics;
-using Telerik.Blazor.Components;
-using Telerik.DataSource.Extensions;
-using Telerik.SvgIcons;
+
 
 namespace OCTOBER.Server.Controllers.UD
 {
@@ -29,7 +27,7 @@ namespace OCTOBER.Server.Controllers.UD
 
         public async Task<IActionResult> Delete(int SchoolID)
         {
-            Debugger.Launch();
+
             try
             {
                 await _context.Database.BeginTransactionAsync();
@@ -58,7 +56,7 @@ namespace OCTOBER.Server.Controllers.UD
         [Route("Get")]
         public async Task<IActionResult> Get()
         {
-            Debugger.Launch();
+
             try
             {
                 await _context.Database.BeginTransactionAsync();
@@ -158,7 +156,7 @@ namespace OCTOBER.Server.Controllers.UD
                 await _context.Database.BeginTransactionAsync();
 
                 var itm = await _context.Schools.Where(x => x.SchoolId == _SchoolDTO.SchoolId).FirstOrDefaultAsync();
-            
+
                 itm.SchoolName = _SchoolDTO.SchoolName;
 
                 _context.Schools.Update(itm);
@@ -176,3 +174,4 @@ namespace OCTOBER.Server.Controllers.UD
         }
     }
 }
+ss
