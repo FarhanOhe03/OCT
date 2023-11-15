@@ -35,6 +35,7 @@ namespace OCTOBER.Server.Controllers.UD
 
                 var itm = await _context.Courses.Where(x => x.CourseNo == CourseNo).FirstOrDefaultAsync();
 
+
                 if (itm != null)
                 {
                     _context.Enrollments.Remove(itm);
